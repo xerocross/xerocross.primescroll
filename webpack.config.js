@@ -1,7 +1,7 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const webpack = require('webpack');
-module.exports = {
+module.exports = [{
     entry : {
         'prime-scroll' : './src/index.js'
     },
@@ -62,4 +62,37 @@ module.exports = {
         port : 9000,
         watchContentBase : true
     }
-};
+},
+{
+    entry : {
+        'more-primes-worker' : './src/more-primes-worker.js',
+    },
+    output : {
+        globalObject : "this",
+        path : path.resolve(__dirname, './public/js'),
+        publicPath : '/public/js',
+        filename : '[name].js',
+        library : 'InfPrimeScroll',
+        libraryTarget : 'umd',
+        umdNamedDefine : true
+    },
+    module : {
+        rules : [
+            {
+                test : /\.js$/,
+                exclude : /node_modules/,
+                use : {
+                    loader : 'babel-loader'
+                }
+            },
+        ]
+    },
+    optimization : {
+        minimize : true
+    },
+    plugins : [
+        new webpack.DefinePlugin({
+            'NODE_ENV' : JSON.stringify(process.env.NODE_ENV)
+        })
+    ]
+}];

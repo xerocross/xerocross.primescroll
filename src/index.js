@@ -9,8 +9,8 @@ new Vue({
     render : function (createElement) {
         return createElement(InfPrimeScroll, {
             props : {
-                busyImageUrl : "/busy3.gif",
-                primeWorkerUrl : "/more-primes-worker.js"
+                busyImageUrl : "/images/busy3.gif",
+                primeWorkerUrl : "/js/more-primes-worker.js"
             },
         });
     }
