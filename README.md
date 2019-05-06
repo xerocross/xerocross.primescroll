@@ -1,2 +1,2 @@
-# vue-project-template
-Exactly what it says on the tin.  This is an opinionated template for creating Vue projects.  It comes with webpack, babel, eslint, and jest already configured.
+# prime-scroll
+A little vue widget that lets the user scroll down an infinite list of prime numbers, computing them client-side as he goes.
