@@ -1,10 +1,10 @@
 {
-  "name": "vue-project-template",
+  "name": "xerocross.primescroll",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "build": "webpack",
     "dev": "cross-env NODE_ENV=development webpack && yarn start",
     "local": "cross-env NODE_ENV=local webpack-dev-server --hot --inline",

@@ -15,6 +15,8 @@ module.exports = {
     ],
     rules: {
         "vue/prop-name-casing" : false,
+        "semi" :  ["error", "always"],
+        "no-console": "off",
         "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,
         "indent": ["error", 4],
         "vue/html-indent": ["error", 4, {
@@ -31,6 +33,7 @@ module.exports = {
         "vue/html-self-closing" : [0]
     },
     globals: {
-        "env" : false
+        "env" : false,
+        "console" : false
     }
 };

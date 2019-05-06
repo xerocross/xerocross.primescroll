@@ -1,18 +1,17 @@
 import Vue from "vue";
-import VueProjectTemplate from "./components/vue-project-template.vue";
-
-let NODE_ENV = env["NODE_ENV"];
+import InfPrimeScroll from "./components/inf-prime-scroll.vue";
 
 new Vue({
-    el : "#vue-project-template",
+    el : "#prime-scroll",
     components : {
-        VueProjectTemplate
+        InfPrimeScroll
     },
     render : function (createElement) {
-        return createElement(VueProjectTemplate, {
+        return createElement(InfPrimeScroll, {
             props : {
-                ENVIRONMENT : NODE_ENV
-            }
+                busyImageUrl : "/busy3.gif",
+                primeWorkerUrl : "/more-primes-worker.js"
+            },
         });
     }
 });

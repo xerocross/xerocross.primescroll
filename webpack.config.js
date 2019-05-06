@@ -3,7 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const webpack = require('webpack')
 module.exports = {
     entry : {
-        'index' : './src/index.js'
+        'prime-scroll' : './src/index.js'
     },
     output : {
         path : path.resolve(__dirname, './dist'),
