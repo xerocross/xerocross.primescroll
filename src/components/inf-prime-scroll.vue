@@ -26,6 +26,7 @@
                         <p>
                             <img 
                                 v-show="working"
+                                class="busy-icon"
                                 :src="busyImageUrl" 
                                 height="40" 
                                 width="40"
@@ -93,9 +94,6 @@ export default {
         this.morePrimes();
     },
     methods : {
-        log (message) {
-            console.log(message);
-        },
         morePrimes () {
             let self = this;
             if (this.working == true) {

@@ -20,6 +20,10 @@ function triggerOverScroll (infPrimeScroll) {
     infPrimeScroll.find(ScrollDiv).vm.$emit('OVERSCROLL_EVENT');
 }
 
+function getBusyIcon (infPrimeScroll) {
+    return infPrimeScroll.find(".busy-icon");
+}
+
 beforeEach(()=> {
     window.Worker = () => {
         throw new Error("Worker not specified");
@@ -37,6 +41,20 @@ test("primes list renders", function() {
     window.Worker = undefined;
     let infPrimeScroll = mount(InfPrimeScroll);
     expect(getPrimesListOuter(infPrimeScroll).exists()).toBe(true);
+});
+
+test("if working, show busy icon", (done) => {
+    let infPrimeScroll = mount(InfPrimeScroll, {});
+    infPrimeScroll.vm.$watch("working", () => {
+        if (infPrimeScroll.vm.working == true) {
+            expect(getBusyIcon(infPrimeScroll).isVisible()).toBe(true);
+            infPrimeScroll.destroy();
+            done();
+        }
+    });
+    setTimeout(()=>{
+        triggerOverScroll(infPrimeScroll);
+    }, 0);
 });
 
 test("after initial mount, list of primes is nonempty, worker null", function(done) {

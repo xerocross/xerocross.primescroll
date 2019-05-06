@@ -1,6 +1,6 @@
-const path = require('path')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const webpack = require('webpack')
+const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const webpack = require('webpack');
 module.exports = {
     entry : {
         'prime-scroll' : './src/index.js'
@@ -46,7 +46,7 @@ module.exports = {
         ]
     },
     optimization : {
-        minimize : false
+        minimize : true
     },
     plugins : [
         new webpack.DefinePlugin({
@@ -62,4 +62,4 @@ module.exports = {
         port : 9000,
         watchContentBase : true
     }
-}
+};
