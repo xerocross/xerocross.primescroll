@@ -39,7 +39,7 @@
         <div class="btn-group">
             <a 
                 ref="download" 
-                class="btn btn-default download-button"
+                class="btn btn-secondary download-button"
                 download="primes.txt"
                 :href="downloadDataHref"
             >Download List</a>
@@ -125,8 +125,6 @@ export default {
 .inf-prime-scroll {
     .prime-list {
         height: 300px;
-        border-style: solid;
-        border-width: 1px;
         border-color: rgb(83, 83, 83);
     }
     .busy {
