@@ -16,16 +16,17 @@ export default {
             {
                 this.$emit("OVERSCROLL_EVENT");
             }
-        }
+        };
         element.onscroll = () => {
             this.$emit("SCROLL_EVENT");
             onscrollHandler();
-        }
+        };
     }
-}
+};
 </script>
 <style lang="scss">
 .scroll-div {
-    overflow : scroll
+    overflow-y : scroll;
+    overflow-x: hidden;
 }
 </style>
